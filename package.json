@@ -1,0 +1,29 @@
+{
+  "name": "TDD",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js --ignore__tests__",
+    "pretest": "SET NODE_TEST=true && yarn sequelize db:migrate",
+    "test": "SET NODE_TEST=true && jest",
+    "posttest": "SET NODE_TEST=true && yarn sequelize db:migrate:undo:all"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "factory-girl": "^5.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "sequelize": "^6.21.2",
+    "sqlite3": "^5.0.8"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "jest": "^28.1.2",
+    "nodemon": "^2.0.18",
+    "sequelize-cli": "^6.4.1",
+    "supertest": "^6.2.3"
+  }
+}
